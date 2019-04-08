@@ -41,6 +41,10 @@ chmod +x ./init-letsencrypt.sh
 
 `docker-compose up -d`
 
+6. Clean global vars:
+
+`unset OS_DOMAIN`
+
 
 ## License
 All code in this repository is licensed under the terms of the `MIT License`. For further information please refer to the `LICENSE` file.
