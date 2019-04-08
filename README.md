@@ -12,23 +12,33 @@ application.
 ## Installation
 1. [Install docker-compose](https://docs.docker.com/compose/install/#install-compose).
 
-2. Clone this repository: `git clone https://github.com/wmnnd/nginx-certbot.git .`
 
-3. Modify configuration:
-- Add domains and email addresses to init-letsencrypt.sh
-- Replace all occurrences of example.org with primary domain (the first one you added to init-letsencrypt.sh) in data/nginx/app.conf
+2. Clone this repository: `git clone https://github.com/Stores-Discount/nginx-certbot .`
+
+3. Set the domain you want to secure
+
+```
+export OS_DOMAIN="api.dev.olst.io"
+```
+
+
+3. Generate proxy VHOST config file
+
+```bash
+csed "s/__DOMAIN_NAME__/$OS_DOMAIN/g" template/nginx/template.conf > data/nginx/$OS_DOMAIN.conf
+```
 
 4. Run init the script:
+
 ```
 chmod +x ./init-letsencrypt.sh
-./init-letsencrypt.sh
+./init-letsencrypt.sh $OS_DOMAIN
 ```
 
 5. Run server:
+
 `docker-compose up`
 
-## Got questions?
-Feel free to post questions in the comment section of the [accompanying guide](https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71)
 
 ## License
 All code in this repository is licensed under the terms of the `MIT License`. For further information please refer to the `LICENSE` file.
