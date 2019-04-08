@@ -39,7 +39,7 @@ chmod +x ./init-letsencrypt.sh
 
 5. Run server:
 
-`docker-compose up`
+`docker-compose up -d`
 
 
 ## License
