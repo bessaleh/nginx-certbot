@@ -18,14 +18,16 @@ application.
 3. Set the domain you want to secure
 
 ```
-export OS_DOMAIN="api.dev.olst.io"
+export OS_DOMAIN="<DOMAIN>"
+# Eg: export OS_DOMAIN="api.dev.olst.io"
 ```
 
 
 3. Generate proxy VHOST config file
 
 ```bash
-csed "s/__DOMAIN_NAME__/$OS_DOMAIN/g" template/nginx/template.conf > data/nginx/$OS_DOMAIN.conf
+mkdir -p data/nginx/
+sed "s/__DOMAIN_NAME__/$OS_DOMAIN/g" template/nginx/template.conf > data/nginx/$OS_DOMAIN.conf
 ```
 
 4. Run init the script:
