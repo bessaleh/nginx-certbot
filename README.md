@@ -15,6 +15,9 @@ application.
 
 2. Clone this repository: `git clone https://github.com/Stores-Discount/nginx-certbot .`
 
+> Do this only ONCE, and leave this step for the further certificate's generations.
+
+
 3. Set the domain you want to secure
 
 ```
